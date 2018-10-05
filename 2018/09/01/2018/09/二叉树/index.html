@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="z">
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    
+    <title>二叉树 | ibard</title>
+    <meta name="renderer" content="webkit">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <meta name="description" content="弱水三千只取一瓢">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="二叉树 | ibard">
+    <meta name="twitter:description" content="弱水三千只取一瓢">
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="二叉树 | ibard">
+    <meta property="og:description" content="弱水三千只取一瓢">
+
+    
+    <meta name="author" content="Ming Chow">
+    
+    <link rel="stylesheet" href="/css/vno.css">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css">
+
+    
+    <link rel="icon" href="/images/favicon.png">
+    
+
+    <meta name="generator" content="hexo"/>
+    
+    <link rel="alternate" type="application/rss+xml" title="ibard" href="/atom.xml">
+    
+
+    <link rel="canonical" href="https://blog.ibard.cn/2018/09/01/2018/09/二叉树/"/>
+
+                 
+</head>
+
+<body class="home-template no-js">
+    <script src="//cdn.bootcss.com/jquery/2.1.4/jquery.min.js"></script>
+    <script src="/js/main.js"></script>
+    <span class="mobile btn-mobile-menu">
+        <i class="fa fa-list btn-mobile-menu__icon"></i>
+        <i class="fa fa-angle-up btn-mobile-close__icon hidden"></i>
+    </span>
+
+    
+<header class="panel-cover panel-cover--collapsed" style="background-image: url(/images/background-cover.jpg)">
+  <div class="panel-main">
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        <a href="/" title="前往 ibard 的主页"><img src="/images/avatar.jpg" width="80" alt="ibard logo" class="panel-cover__logo logo" /></a>
+        <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage for ibard">ibard</a></h1>
+        
+        <span class="panel-cover__subtitle panel-subtitle">乐观， 进取</span>
+        
+        <hr class="panel-cover__divider" />
+        <p class="panel-cover__description">弱水三千只取一瓢</p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary" />
+
+        <div class="navigation-wrapper">
+          <div>
+          <nav class="cover-navigation cover-navigation--primary">
+            <ul class="navigation">
+              <li class="navigation__item"><a href="/#blog" title="访问博客" class="blog-button">文字阁</a></li>
+            
+              <li class="navigation__item"><a href="/mood">心情随笔</a></li>
+            
+            </ul>
+          </nav>
+          </div>
+          <div>
+          <nav class="cover-navigation navigation--social">
+  <ul class="navigation">
+
+    <!-- Weibo-->
+    
+
+    <!-- Github -->
+    
+    <li class="navigation__item">
+      <a href="https://github.com/sevenleave" title="查看我的GitHub主页" target="_blank">
+        <i class='social fa fa-github'></i>
+        <span class="label">Github</span>
+      </a>
+    </li>
+    
+
+    <!-- Stack Overflow -->
+    
+
+    <!-- Google Plus -->
+    
+
+    <!-- Facebook -->
+    
+
+    <!-- Segmentfault -->
+    
+      <li class="navigation__item">
+        <a href="https://segmentfault.com/blog/sevenleave" title="上Segmentfault找我" target="_blank">
+          <i class='social fa fa-pagelines'></i>
+          <span class="label">Segmentfault</span>
+        </a>
+      </li>
+      
+
+    <!-- Twitter -->
+    
+
+    
+    <li class="navigation__item">
+      <a href="/atom.xml" title="RSS" target="_blank">
+        <i class='social fa fa-rss'></i>
+        <span class="label">RSS</span>
+      </a>
+    </li>
+    
+    
+
+  </ul>
+</nav>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay cover-orange"></div>
+  </div> 
+</header>
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner">
+            <article class="post-container post-container--single">
+
+  <header class="post-header">
+    <div class="post-meta">
+      <time datetime="2018-09-01T00:00:00.000Z" class="post-list__meta--date date">2018-09</time> &#8226; <span class="post-meta__tags tags">于 
+  <a class="tag-link" href="/tags/二叉树/">二叉树</a>, <a class="tag-link" href="/tags/算法/">算法</a>
+ </span>
+      <span class="page-pv">
+       阅读 <span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span>
+      </span> 
+   
+    </div>
+    <h1 class="post-title">二叉树</h1>
+  </header>
+
+  <section class="post">
+    <h1 id="二叉树"><a href="#二叉树" class="headerlink" title="二叉树"></a>二叉树</h1><h2 id="前情提要："><a href="#前情提要：" class="headerlink" title="前情提要："></a>前情提要：</h2><h4 id="1、二叉树"><a href="#1、二叉树" class="headerlink" title="1、二叉树"></a>1、二叉树</h4><p>每一个节点最多有2个子节点，有左右之分。深度为n的二叉树，最多有2^n^ -1个节点，第n层最多有2^k-1^ 个节点。</p>
+<h4 id="2、满二叉树"><a href="#2、满二叉树" class="headerlink" title="2、满二叉树"></a>2、满二叉树</h4><p>一棵深度为k，且有2^k^ -1个节点的树。</p>
+<h4 id="3、完全二叉树"><a href="#3、完全二叉树" class="headerlink" title="3、完全二叉树"></a>3、完全二叉树</h4><p>完全二叉树是由满二叉树而引出来的。对于深度为K的，有n个结点的二叉树，当且仅当其每一个结点都与深度为K的满二叉树中编号从1至n的结点一一对应时称之为完全二叉树。</p>
+<p>若设二叉树的深度为h，除第 h 层外，其它各层 (1～h-1) 的结点数都达到最大个数，第h 层所有的结点都连续集中在最左边，这就是完全二叉树。</p>
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><h3 id="一、二叉查找树（BST-binary-search-tree）"><a href="#一、二叉查找树（BST-binary-search-tree）" class="headerlink" title="一、二叉查找树（BST, binary search tree）"></a>一、二叉查找树（BST, binary search tree）</h3><p>某一节点的键值，一定大于其左子树的键值，一定小于其右子树的键值。</p>
+<p><strong>为什么需要它？</strong> </p>
+<blockquote>
+<p>我们知道数组的搜索效率是O(1)，但是数组的插入、删除都需要移动元素，效率低下；而链表的插入、删除效率很高，但是其搜索效率是O(n)，效率低下。</p>
+<p>这时候，二叉查找树就应运而生了。它具有插入、删除操作的高效和查找的高效。</p>
+</blockquote>
+<p><img src="http://pd73wtntw.bkt.clouddn.com/201809/bt-1.png" alt="bt-1"></p>
+<p><strong>实现：</strong>二叉查找树的实现简单，常用的操作就是插入、删除、查找节点。</p>
+<p><strong>缺点：</strong>二叉查找树在插入有序元素的时候，会退化成链表。</p>
+<p><img src="http://pd73wtntw.bkt.clouddn.com/201809/bt-2.png" alt="bt-2"></p>
+<p><strong>中序遍历：</strong>一颗二叉查找树的中序遍历结果就是排序的结果。</p>
+<blockquote>
+<p>第一颗树的中序遍历结果是：3  4  7  10  12  13  17</p>
+<p>第二棵树的中序遍历结果是：17  11  8  7  3  1</p>
+</blockquote>
+<h3 id="二、平衡二叉树（AVL）"><a href="#二、平衡二叉树（AVL）" class="headerlink" title="二、平衡二叉树（AVL）"></a>二、平衡二叉树（AVL）</h3><p>理论上，在插入元素的时候，动态调整二叉查找树，使其平衡（左右子树的最大深度不超过1）。平衡的二叉树就完美地实现了二分查找，同时其插入、删除的效率也是LogN。但是其实现时过于麻烦，仅仅作为理论来看待即可。</p>
+<p><strong>特点：</strong>平衡二叉树在节点插入的过程中，会动态地调整树的结构，使得其每个节点的左、右子树的最大深度之差不会超过1。这样就维持了二叉树的稳定，从而使得插入、删除、查找的效率都处在log~2~N。</p>
+<p><img src="http://pd73wtntw.bkt.clouddn.com/201809/bt-3.png" alt="bt-3"></p>
+<p><strong>实现：</strong>在对节点的操作中，使用左旋、右旋来调整树的结构。理解左旋和右旋的意义，事实上，旋转的结果就是使得较为中间的数处在了树的中间位置；换个角度，我们有一组排好序的数组，那么我们要把它拎成一颗平衡的二叉树，当然就是位于中间的数处于二叉树的中间，这样才不会使二叉树左右不协调。</p>
+<h3 id="三、2-3树"><a href="#三、2-3树" class="headerlink" title="三、2-3树"></a>三、2-3树</h3><p>作为平衡二叉树的一种变形，2-3数不再是二叉树了，而是一颗多叉树。它引入了2-节点和3-节点。3-节点就是该节点有2个key和3个子节点。在插入的时候，是自下而上来构建2-3树，由于2-3树插入节点的特性（新节点插入到2-或3-节点中，然后自下而上分裂），使得2-3树是完美平衡的。</p>
+<p><strong>特点：</strong> 所有null节点到根节点的距离都是相同的。</p>
+<p><img src="http://pd73wtntw.bkt.clouddn.com/201809/bt-4.png" alt="bt-4"></p>
+<p><strong>实现：</strong> 2-3树的思想很好，同时也引出了2-3-4树甚至是n叉树。在MySQL的索引存储引擎中，使用的是B+Tree的结构，它就是多叉树的实现。</p>
+<h3 id="四、红黑树"><a href="#四、红黑树" class="headerlink" title="四、红黑树"></a>四、红黑树</h3><p>2-3树在构建时，我们还是觉得麻烦，我们只想使用二叉查找树。这时候通过引入红黑节点及相关规定，我们可以构建一颗接近完美平衡的二叉查找树（因为2-3树是完美平衡的，而3-节点的拆分使得红黑树只能是接近完美平衡）。</p>
+<p><strong>意义：</strong> 最终红黑树的实现，实际上就是一颗2-3树，2-3树可以与红黑树互相转换。</p>
+<p><strong>延伸：</strong> jdk1.8之后，hashmap的底层，其原先存储值的链表结构改为了红黑树实现。</p>
+<p><img src="http://pd73wtntw.bkt.clouddn.com/201809/bt-5.png" alt="bt-5"></p>
+<h2 id="B-Tree与B-Tree"><a href="#B-Tree与B-Tree" class="headerlink" title="B-Tree与B+Tree"></a>B-Tree与B+Tree</h2><h3 id="B-Tree"><a href="#B-Tree" class="headerlink" title="B-Tree"></a>B-Tree</h3><p>B-Tree是一种是磁盘等外存储设备设计的一种平衡查找树，它是多路平衡查找树。它的本质是一颗2-3-4-n树。为了减少磁盘指针移动的次数，多叉树尽量越矮胖越好。</p>
+<p><img src="http://pd73wtntw.bkt.clouddn.com/201809/bt-6.png" alt="bt-6"></p>
+<p><strong>特点：</strong> B-Tree的非叶子节点也会存储数据，这样会使得内存读取的索引页面更小，效率不高。</p>
+<h3 id="B-Tree-1"><a href="#B-Tree-1" class="headerlink" title="B+Tree"></a>B+Tree</h3><p>B+Tree是B-Tree的升级版，它的非叶子节点只存储键值key，所有数据都存在最底层的叶子节点上。同时所有叶子节点之间都有一个链指针相连，这样有利于数据的范围查找和数据遍历。</p>
+<p><img src="http://pd73wtntw.bkt.clouddn.com/201809/bt-8.png" alt="bt-8"></p>
+<p>InnoDB和MyISAM都是B+Tree的实现。但是2者还是有区别的。</p>
+<p><strong>InnoDB：</strong> </p>
+<p><strong>InnoDB会有一个聚簇索引</strong>，一般是主键索引。该索引的B+Tree结构上，叶子节点存储了数据行的所有列，因此，一个数据表只能有一个聚簇索引。</p>
+<p>InnoDB的二级索引，其叶子节点除了拥有key之外，还会保存主键列的值，因此二级索引需要根据主键值回表查找真正的数据。这意味着在设计二级索引的时候，我们可以使用覆盖索引来获取主键列的值。</p>
+<p><strong>MyISAM：</strong></p>
+<p>对于MyISAM来说，其主键索引和二级索引的结构是一样的。但是其叶子节点保存的只是数据的行指针，指向真正的数据。</p>
+<p><strong>InnoDB和MyISAM的优缺点：</strong> </p>
+<p>二者不同的实现在不同的场景下是各有优劣的，聚簇索引在读操作多、写操作少的时候，查找效率很高；而非聚簇索引在读操作少、写操作多的情况下，因为只需要修改key（B+Tree）的结构较少，如果是聚簇索引则需要耗费很大的资源。<strong>所以针对不同的读写场景，合理地选用表的存储引擎还是挺重要的。</strong> </p>
+<p><img src="http://pd73wtntw.bkt.clouddn.com/201809/bt-7.png" alt="bt-7"></p>
+
+  </section>
+
+</article>
+
+<section class="read-more">
+           
+    
+               
+            <div class="read-more-item">
+                <span class="read-more-item-dim">最近的文章</span>
+                <h2 class="post-list__post-title post-title"><a href="/2018/09/01/2018/09/动态代理/" title="动态代理">动态代理</a></h2>
+                <p class="excerpt">
+                
+                动态代理1、先谈静态代理对于静态代理，我们已经很熟悉了。我们拥有一个抽象类，真实类继承自抽象类并重写其业务方法，代理类持有真实类的对象实例，在重写业务方法中通过调用真实类的方法，并且添加自己的逻辑。这样代理类就实现了对真实类的行为代理。
+
+静态代理的缺点在于，我们需要实现多个代理类，这无疑是很崩溃的
+                &hellip;
+                </p>
+                <div class="post-list__meta"><time datetime="2018-09-01T00:00:00.000Z" class="post-list__meta--date date">2018-09</time> &#8226; <span class="post-list__meta--tags tags">于 </span><a class="btn-border-small" href="/2018/09/01/2018/09/动态代理/">继续阅读</a></div>
+                           
+            </div>
+        
+        
+               
+            <div class="read-more-item">
+                <span class="read-more-item-dim">更早的文章</span>
+                <h2 class="post-list__post-title post-title"><a href="/2018/09/01/2018/09/tomcat与nginx反向代理/" title="tomcat与nginx反向代理">tomcat与nginx反向代理</a></h2>
+                <p class="excerpt">
+                
+                一、在linux上部署运行多个tomcat1、以前的我们虽然说是在linux上，但是windows上也是同样的道理，只不过我们服务器都是选用linux罢了。
+原先，自己有多个项目需要部署在linux上时，我的做法（新手的做法）是：在linux上只有一个tomcat服务器，我们把多个项目如projec
+                &hellip;
+                </p>
+                <div class="post-list__meta"><time datetime="2018-09-01T00:00:00.000Z" class="post-list__meta--date date">2018-09</time> &#8226; <span class="post-list__meta--tags tags">于 
+  <a class="tag-link" href="/tags/nginx/">nginx</a>, <a class="tag-link" href="/tags/tomcat/">tomcat</a>
+</span><a class="btn-border-small" href="/2018/09/01/2018/09/tomcat与nginx反向代理/">继续阅读</a></div>
+                       
+            </div>
+        
+     
+   
+   
+  
+</section>
+
+  
+
+            <footer class="footer">
+    <span class="footer__copyright">
+        &copy; 2018 Ming Chow - 本站点采用 <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>
+       
+    </span>
+    <span class="footer__copyright">
+             - 基于 <a href="http://hexo.io">Hexo</a> 搭建，使用 <a href="https://github.com/monniya/hexo-theme-new-vno ">new-vno</a> 主题，由<a href="https://monniya.com ">@Monniya</a> 修改自 <a href="https://github.com/lenbo-ma/hexo-theme-vno" target="_blank">Vno</a>, 原创出自<a href="http://github.com/onevcat/vno" target="_blank">onevcat</a>
+         </span>
+       
+    
+    
+</footer>
+
+
+        </div>
+    </div>
+
+     
+<script>
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	ga('create', 'UA-78918255-1', 'auto');
+	ga('send', 'pageview');
+</script>
+
+    
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "//hm.baidu.com/hm.js?9cdad07c755fa23f6aced510c6760e87";
+            var s = document.getElementsByTagName("script")[0]; 
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+
+
+
+    <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    
+    
+</body>
+</html>

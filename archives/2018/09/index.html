@@ -51,7 +51,7 @@
     </span>
 
     
-<header class="panel-cover " style="background-image: url(/images/background-cover.jpg)">
+<header class="panel-cover panel-cover--collapsed" style="background-image: url(/images/background-cover.jpg)">
   <div class="panel-main">
     <div class="panel-main__inner panel-inverted">
     <div class="panel-main__content">
@@ -146,83 +146,113 @@
   
     
     <li>
-      <h2 class="post-list__post-title post-title"><a href="/2018/08/01/2018/08/好用的Objects类/" title="link to post.title">好用的`java.util.Objects`类</a></h2>
+      <h2 class="post-list__post-title post-title"><a href="/2018/09/01/2018/09/List有序集合/" title="link to post.title">List接口的实现类</a></h2>
       <p class="excerpt">
     
-      好用的java.util.Objects类在jdk1.7中，新增了一个工具类，就是java.util.Objects类。它有3个简单的封装方法，对于平常的使用来说挺有用的，分别是：hashCode、equals、toString这3个方法。
-1、hashcode生成1234567891011121314151617181920// 1. Objects.hash(Object... values)
-    &hellip;
-      </p>
-      <div class="post-list__meta"><time datetime="2018-08-01T00:00:00.000Z" class="post-list__meta--date date">2018-08</time> &#8226; <span class="post-list__meta--tags tags">于 
-  <a class="tag-link" href="/tags/java-util-Objects/">java.util.Objects</a>
-</span><a class="btn-border-small" href="/2018/08/01/2018/08/好用的Objects类/">继续阅读</a></div>
-      <hr class="post-list__divider" />
-    </li>
-  
-    
-    <li>
-      <h2 class="post-list__post-title post-title"><a href="/2018/08/01/2018/08/Java中的数值类型选择/" title="link to post.title">Java中的数值类型选择</a></h2>
-      <p class="excerpt">
-    
-      Java中的数值类型选择整数类型有byte(1 byte)，short(2 byte)，int(4 byte)，long(8 byte)等基本数据类型，取值的范围不一样。
-1234byte x1 = 1;short x2 = 2;int x3 = 3;long x4 = 4L;
-涉及到有小数的数值这种场景也是要分情况讨论的。
-1.货币、金钱的计算当涉及到人民币、美元的计算时，比如说人民币RMB，单
-    &hellip;
-      </p>
-      <div class="post-list__meta"><time datetime="2018-08-01T00:00:00.000Z" class="post-list__meta--date date">2018-08</time> &#8226; <span class="post-list__meta--tags tags">于 
-  <a class="tag-link" href="/tags/数值类型/">数值类型</a>
-</span><a class="btn-border-small" href="/2018/08/01/2018/08/Java中的数值类型选择/">继续阅读</a></div>
-      <hr class="post-list__divider" />
-    </li>
-  
-    
-    <li>
-      <h2 class="post-list__post-title post-title"><a href="/2018/07/01/2018/07/http请求的url编码/" title="link to post.title">http请求（GET/POST）时，url/参数编码的过程分析</a></h2>
-      <p class="excerpt">
-    
-      http请求（GET/POST）时，url/参数编码的过程分析
-这个实验，是在采用ssm框架的基础上演示的。
+      List接口的实现类List表示有序的集合（元素可以重复），根据索引来寻找元素，放入其中的元素的存储顺序和放入顺序是一致的。
+ArrayList
+0.继承自AbstractList，拥有通用的方法如Iterator迭代器。实现List接口。
+1.底层是transient Object[] elementData 数组。可以看到默认大小是10。
 
-在前端向后端发出http请求时，有时候当我们采用GET方式时，参数会被编码在url后面。那么这个url是如何编码解码的呢？
-http请求的发出，以及编码过程下面在chrome浏览器和postman下模拟请求，用fiddler来监控请求发出信息。
-chrome游览器地址输入： 
+2.不同的初始化方式，有一点区别。
 
-这个路径
+1234567
     &hellip;
       </p>
-      <div class="post-list__meta"><time datetime="2018-07-01T00:00:00.000Z" class="post-list__meta--date date">2018-07</time> &#8226; <span class="post-list__meta--tags tags">于 
-  <a class="tag-link" href="/tags/http/">http</a>, <a class="tag-link" href="/tags/url编码/">url编码</a>
-</span><a class="btn-border-small" href="/2018/07/01/2018/07/http请求的url编码/">继续阅读</a></div>
+      <div class="post-list__meta"><time datetime="2018-09-01T00:00:00.000Z" class="post-list__meta--date date">2018-09</time> &#8226; <span class="post-list__meta--tags tags">于 
+  <a class="tag-link" href="/tags/List接口/">List接口</a>
+</span><a class="btn-border-small" href="/2018/09/01/2018/09/List有序集合/">继续阅读</a></div>
       <hr class="post-list__divider" />
     </li>
   
     
     <li>
-      <h2 class="post-list__post-title post-title"><a href="/2018/07/01/2018/07/classpath路径解读/" title="link to post.title">java项目中的classpath到底是什么</a></h2>
+      <h2 class="post-list__post-title post-title"><a href="/2018/09/01/2018/09/序列化/" title="link to post.title">序列化</a></h2>
       <p class="excerpt">
     
-      java项目中的classpath到底是什么在java项目中，你一定碰到过classpath，通常情况下，我们是用它来指定配置/资源文件的路径。在刚开始学习的时候，自己也糊里糊涂，但是现在，是时候弄清楚它到底是指什么了。
-顾名思义，classpath就是class的path，也就是类文件(*.class的路径)。一谈到文件的路径，我们就很有必要了解一个java项目（通常也是web项目）它在真正运行
+      序列化Serializable作用 
+1.当2个进程在进行远程通信时，相互发送数据，数据都是以二进制的形式传送的。如果我们要传输对象的话，就需要把对象转化为字节数组（二进制数据），接收方接收后反序列成对象。目的在于，传送对象的状态，也就是属性值
+2.反序列化后的对象还可以保存到硬盘上。
+实现方式
+1.实现Serializable接口。
+2.实现Serializable接口，并增加void writ
     &hellip;
       </p>
-      <div class="post-list__meta"><time datetime="2018-07-01T00:00:00.000Z" class="post-list__meta--date date">2018-07</time> &#8226; <span class="post-list__meta--tags tags">于 
-  <a class="tag-link" href="/tags/classpath/">classpath</a>
-</span><a class="btn-border-small" href="/2018/07/01/2018/07/classpath路径解读/">继续阅读</a></div>
+      <div class="post-list__meta"><time datetime="2018-09-01T00:00:00.000Z" class="post-list__meta--date date">2018-09</time> &#8226; <span class="post-list__meta--tags tags">于 </span><a class="btn-border-small" href="/2018/09/01/2018/09/序列化/">继续阅读</a></div>
+      <hr class="post-list__divider" />
+    </li>
+  
+    
+    <li>
+      <h2 class="post-list__post-title post-title"><a href="/2018/09/01/2018/09/动态代理/" title="link to post.title">动态代理</a></h2>
+      <p class="excerpt">
+    
+      动态代理1、先谈静态代理对于静态代理，我们已经很熟悉了。我们拥有一个抽象类，真实类继承自抽象类并重写其业务方法，代理类持有真实类的对象实例，在重写业务方法中通过调用真实类的方法，并且添加自己的逻辑。这样代理类就实现了对真实类的行为代理。
+
+静态代理的缺点在于，我们需要实现多个代理类，这无疑是很崩溃的。
+2、JDK动态代理
+优点先行：我们说静态代理的缺点在于需要为每一个真实类都生成一个对应的代理类，
+    &hellip;
+      </p>
+      <div class="post-list__meta"><time datetime="2018-09-01T00:00:00.000Z" class="post-list__meta--date date">2018-09</time> &#8226; <span class="post-list__meta--tags tags">于 </span><a class="btn-border-small" href="/2018/09/01/2018/09/动态代理/">继续阅读</a></div>
+      <hr class="post-list__divider" />
+    </li>
+  
+    
+    <li>
+      <h2 class="post-list__post-title post-title"><a href="/2018/09/01/2018/09/二叉树/" title="link to post.title">二叉树</a></h2>
+      <p class="excerpt">
+    
+      二叉树前情提要：1、二叉树每一个节点最多有2个子节点，有左右之分。深度为n的二叉树，最多有2^n^ -1个节点，第n层最多有2^k-1^ 个节点。
+2、满二叉树一棵深度为k，且有2^k^ -1个节点的树。
+3、完全二叉树完全二叉树是由满二叉树而引出来的。对于深度为K的，有n个结点的二叉树，当且仅当其每一个结点都与深度为K的满二叉树中编号从1至n的结点一一对应时称之为完全二叉树。
+若设二叉树的深度为
+    &hellip;
+      </p>
+      <div class="post-list__meta"><time datetime="2018-09-01T00:00:00.000Z" class="post-list__meta--date date">2018-09</time> &#8226; <span class="post-list__meta--tags tags">于 
+  <a class="tag-link" href="/tags/二叉树/">二叉树</a>, <a class="tag-link" href="/tags/算法/">算法</a>
+</span><a class="btn-border-small" href="/2018/09/01/2018/09/二叉树/">继续阅读</a></div>
+      <hr class="post-list__divider" />
+    </li>
+  
+    
+    <li>
+      <h2 class="post-list__post-title post-title"><a href="/2018/09/01/2018/09/tomcat与nginx反向代理/" title="link to post.title">tomcat与nginx反向代理</a></h2>
+      <p class="excerpt">
+    
+      一、在linux上部署运行多个tomcat1、以前的我们虽然说是在linux上，但是windows上也是同样的道理，只不过我们服务器都是选用linux罢了。
+原先，自己有多个项目需要部署在linux上时，我的做法（新手的做法）是：在linux上只有一个tomcat服务器，我们把多个项目如project-1.war、project-2.war、project-3.war（一般都是.war包的形式）都
+    &hellip;
+      </p>
+      <div class="post-list__meta"><time datetime="2018-09-01T00:00:00.000Z" class="post-list__meta--date date">2018-09</time> &#8226; <span class="post-list__meta--tags tags">于 
+  <a class="tag-link" href="/tags/nginx/">nginx</a>, <a class="tag-link" href="/tags/tomcat/">tomcat</a>
+</span><a class="btn-border-small" href="/2018/09/01/2018/09/tomcat与nginx反向代理/">继续阅读</a></div>
+      <hr class="post-list__divider" />
+    </li>
+  
+    
+    <li>
+      <h2 class="post-list__post-title post-title"><a href="/2018/09/01/2018/09/Queue队列/" title="link to post.title">Queue接口的实现类</a></h2>
+      <p class="excerpt">
+    
+      Queue接口的实现类
+queue作为队列，java在实现的时候，直接实现了双端队列deque。这样双端队列就囊括了队列、双端队列、堆栈这3种角色的功能。
+所以我们在使用的时候使用的是Deque接口的实现类，当然Deque接口继承自Queue接口。
+
+
+Deque接口的实现类我们记住，Deque接口所能代表的数据结构：队列，双端队列，堆栈。
+ArrayDeque1.内部使用transient Ob
+    &hellip;
+      </p>
+      <div class="post-list__meta"><time datetime="2018-09-01T00:00:00.000Z" class="post-list__meta--date date">2018-09</time> &#8226; <span class="post-list__meta--tags tags">于 
+  <a class="tag-link" href="/tags/Queue接口/">Queue接口</a>
+</span><a class="btn-border-small" href="/2018/09/01/2018/09/Queue队列/">继续阅读</a></div>
       <hr class="post-list__divider" />
     </li>
   
     
   </ol>
 
-
-  <nav class="pagination" role="navigation">
-    
-      <a class="older-posts pagination__newer btn btn-small btn-tertiary" href="/#blog">&larr; 最近</a>
-    
-    <span class="pagination__page-number" >  2 / 2 </span>
-    
-  </nav>
 
  <script type="text/x-mathjax-config">
     MathJax.Hub.Config({"HTML-CSS": { preferredFont: "TeX", availableFonts: ["STIX","TeX"], linebreaks: { automatic:true }, EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50) },

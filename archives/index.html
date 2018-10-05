@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html >
+<html lang="z">
 <head>
     <meta charset="utf-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
@@ -69,9 +69,7 @@
           <div>
           <nav class="cover-navigation cover-navigation--primary">
             <ul class="navigation">
-              <li class="navigation__item"><a href="/#blog" title="Visit the blog" class="blog-button">文章</a></li>
-            
-              <li class="navigation__item"><a href="">博客</a></li>
+              <li class="navigation__item"><a href="/#blog" title="访问博客" class="blog-button">文字阁</a></li>
             
               <li class="navigation__item"><a href="/mood">心情随笔</a></li>
             
@@ -82,44 +80,53 @@
           <nav class="cover-navigation navigation--social">
   <ul class="navigation">
 
-  <!-- Weibo-->
-  
+    <!-- Weibo-->
+    
 
-  <!-- Github -->
-  
-  <li class="navigation__item">
-    <a href="https://github.com/SevenLeave" title="GitHub" target="_blank">
-      <i class='social fa fa-github'></i>
-      <span class="label">Github</span>
-    </a>
-  </li>
+    <!-- Github -->
+    
+    <li class="navigation__item">
+      <a href="https://github.com/sevenleave" title="查看我的GitHub主页" target="_blank">
+        <i class='social fa fa-github'></i>
+        <span class="label">Github</span>
+      </a>
+    </li>
+    
 
+    <!-- Stack Overflow -->
+    
 
-<!-- Stack Overflow -->
-        
+    <!-- Google Plus -->
+    
 
-  <!-- Google Plus -->
-  
+    <!-- Facebook -->
+    
 
-<!-- Facebook -->
+    <!-- Segmentfault -->
+    
+      <li class="navigation__item">
+        <a href="https://segmentfault.com/blog/sevenleave" title="上Segmentfault找我" target="_blank">
+          <i class='social fa fa-pagelines'></i>
+          <span class="label">Segmentfault</span>
+        </a>
+      </li>
+      
 
-  
-<!-- Twitter -->
+    <!-- Twitter -->
+    
 
-  
-
-  <li class="navigation__item">
-    <a href="/atom.xml" title="RSS" target="_blank">
-      <i class='social fa fa-rss'></i>
-      <span class="label">RSS</span>
-    </a>
-  </li>
-
-
+    
+    <li class="navigation__item">
+      <a href="/atom.xml" title="RSS" target="_blank">
+        <i class='social fa fa-rss'></i>
+        <span class="label">RSS</span>
+      </a>
+    </li>
+    
+    
 
   </ul>
 </nav>
-
           </div>
         </div>
 
@@ -139,104 +146,125 @@
   
     
     <li>
-      <h2 class="post-list__post-title post-title"><a href="/2018/10/05/hello-world - 副本 (4)/" title="link to post.title">Hello World</a></h2>
+      <h2 class="post-list__post-title post-title"><a href="/2018/09/01/2018/09/List有序集合/" title="link to post.title">List接口的实现类</a></h2>
       <p class="excerpt">
     
-      Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick
+      List接口的实现类List表示有序的集合（元素可以重复），根据索引来寻找元素，放入其中的元素的存储顺序和放入顺序是一致的。
+ArrayList
+0.继承自AbstractList，拥有通用的方法如Iterator迭代器。实现List接口。
+1.底层是transient Object[] elementData 数组。可以看到默认大小是10。
+
+2.不同的初始化方式，有一点区别。
+
+1234567
     &hellip;
       </p>
-      <div class="post-list__meta"><time datetime="2018-10-05T08:21:37.967Z" class="post-list__meta--date date">2018-10-05</time> &#8226; <span class="post-list__meta--tags tags">于 </span><a class="btn-border-small" href="/2018/10/05/hello-world - 副本 (4)/">继续阅读</a></div>
+      <div class="post-list__meta"><time datetime="2018-09-01T00:00:00.000Z" class="post-list__meta--date date">2018-09</time> &#8226; <span class="post-list__meta--tags tags">于 
+  <a class="tag-link" href="/tags/List接口/">List接口</a>
+</span><a class="btn-border-small" href="/2018/09/01/2018/09/List有序集合/">继续阅读</a></div>
       <hr class="post-list__divider" />
     </li>
   
     
     <li>
-      <h2 class="post-list__post-title post-title"><a href="/2018/10/05/test - 副本 (4)/" title="link to post.title">测试页面</a></h2>
+      <h2 class="post-list__post-title post-title"><a href="/2018/09/01/2018/09/序列化/" title="link to post.title">序列化</a></h2>
       <p class="excerpt">
     
-      标题
-一段文字
-
-
+      序列化Serializable作用 
+1.当2个进程在进行远程通信时，相互发送数据，数据都是以二进制的形式传送的。如果我们要传输对象的话，就需要把对象转化为字节数组（二进制数据），接收方接收后反序列成对象。目的在于，传送对象的状态，也就是属性值
+2.反序列化后的对象还可以保存到硬盘上。
+实现方式
+1.实现Serializable接口。
+2.实现Serializable接口，并增加void writ
     &hellip;
       </p>
-      <div class="post-list__meta"><time datetime="2018-10-05T08:21:37.936Z" class="post-list__meta--date date">2018-10-05</time> &#8226; <span class="post-list__meta--tags tags">于 
-  <a class="tag-link" href="/tags/文章/">文章</a>, <a class="tag-link" href="/tags/测试/">测试</a>
-</span><a class="btn-border-small" href="/2018/10/05/test - 副本 (4)/">继续阅读</a></div>
+      <div class="post-list__meta"><time datetime="2018-09-01T00:00:00.000Z" class="post-list__meta--date date">2018-09</time> &#8226; <span class="post-list__meta--tags tags">于 </span><a class="btn-border-small" href="/2018/09/01/2018/09/序列化/">继续阅读</a></div>
       <hr class="post-list__divider" />
     </li>
   
     
     <li>
-      <h2 class="post-list__post-title post-title"><a href="/2018/10/05/hello-world - 副本 (3)/" title="link to post.title">Hello World</a></h2>
+      <h2 class="post-list__post-title post-title"><a href="/2018/09/01/2018/09/动态代理/" title="link to post.title">动态代理</a></h2>
       <p class="excerpt">
     
-      Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick
+      动态代理1、先谈静态代理对于静态代理，我们已经很熟悉了。我们拥有一个抽象类，真实类继承自抽象类并重写其业务方法，代理类持有真实类的对象实例，在重写业务方法中通过调用真实类的方法，并且添加自己的逻辑。这样代理类就实现了对真实类的行为代理。
+
+静态代理的缺点在于，我们需要实现多个代理类，这无疑是很崩溃的。
+2、JDK动态代理
+优点先行：我们说静态代理的缺点在于需要为每一个真实类都生成一个对应的代理类，
     &hellip;
       </p>
-      <div class="post-list__meta"><time datetime="2018-10-05T08:21:36.841Z" class="post-list__meta--date date">2018-10-05</time> &#8226; <span class="post-list__meta--tags tags">于 </span><a class="btn-border-small" href="/2018/10/05/hello-world - 副本 (3)/">继续阅读</a></div>
+      <div class="post-list__meta"><time datetime="2018-09-01T00:00:00.000Z" class="post-list__meta--date date">2018-09</time> &#8226; <span class="post-list__meta--tags tags">于 </span><a class="btn-border-small" href="/2018/09/01/2018/09/动态代理/">继续阅读</a></div>
       <hr class="post-list__divider" />
     </li>
   
     
     <li>
-      <h2 class="post-list__post-title post-title"><a href="/2018/10/05/test - 副本 (3)/" title="link to post.title">测试页面</a></h2>
+      <h2 class="post-list__post-title post-title"><a href="/2018/09/01/2018/09/二叉树/" title="link to post.title">二叉树</a></h2>
       <p class="excerpt">
     
-      标题
-一段文字
-
-
+      二叉树前情提要：1、二叉树每一个节点最多有2个子节点，有左右之分。深度为n的二叉树，最多有2^n^ -1个节点，第n层最多有2^k-1^ 个节点。
+2、满二叉树一棵深度为k，且有2^k^ -1个节点的树。
+3、完全二叉树完全二叉树是由满二叉树而引出来的。对于深度为K的，有n个结点的二叉树，当且仅当其每一个结点都与深度为K的满二叉树中编号从1至n的结点一一对应时称之为完全二叉树。
+若设二叉树的深度为
     &hellip;
       </p>
-      <div class="post-list__meta"><time datetime="2018-10-05T08:21:36.831Z" class="post-list__meta--date date">2018-10-05</time> &#8226; <span class="post-list__meta--tags tags">于 
-  <a class="tag-link" href="/tags/文章/">文章</a>, <a class="tag-link" href="/tags/测试/">测试</a>
-</span><a class="btn-border-small" href="/2018/10/05/test - 副本 (3)/">继续阅读</a></div>
+      <div class="post-list__meta"><time datetime="2018-09-01T00:00:00.000Z" class="post-list__meta--date date">2018-09</time> &#8226; <span class="post-list__meta--tags tags">于 
+  <a class="tag-link" href="/tags/二叉树/">二叉树</a>, <a class="tag-link" href="/tags/算法/">算法</a>
+</span><a class="btn-border-small" href="/2018/09/01/2018/09/二叉树/">继续阅读</a></div>
       <hr class="post-list__divider" />
     </li>
   
     
     <li>
-      <h2 class="post-list__post-title post-title"><a href="/2018/10/05/hello-world - 副本 (2)/" title="link to post.title">Hello World</a></h2>
+      <h2 class="post-list__post-title post-title"><a href="/2018/09/01/2018/09/tomcat与nginx反向代理/" title="link to post.title">tomcat与nginx反向代理</a></h2>
       <p class="excerpt">
     
-      Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick
+      一、在linux上部署运行多个tomcat1、以前的我们虽然说是在linux上，但是windows上也是同样的道理，只不过我们服务器都是选用linux罢了。
+原先，自己有多个项目需要部署在linux上时，我的做法（新手的做法）是：在linux上只有一个tomcat服务器，我们把多个项目如project-1.war、project-2.war、project-3.war（一般都是.war包的形式）都
     &hellip;
       </p>
-      <div class="post-list__meta"><time datetime="2018-10-05T08:21:35.891Z" class="post-list__meta--date date">2018-10-05</time> &#8226; <span class="post-list__meta--tags tags">于 </span><a class="btn-border-small" href="/2018/10/05/hello-world - 副本 (2)/">继续阅读</a></div>
+      <div class="post-list__meta"><time datetime="2018-09-01T00:00:00.000Z" class="post-list__meta--date date">2018-09</time> &#8226; <span class="post-list__meta--tags tags">于 
+  <a class="tag-link" href="/tags/nginx/">nginx</a>, <a class="tag-link" href="/tags/tomcat/">tomcat</a>
+</span><a class="btn-border-small" href="/2018/09/01/2018/09/tomcat与nginx反向代理/">继续阅读</a></div>
       <hr class="post-list__divider" />
     </li>
   
     
     <li>
-      <h2 class="post-list__post-title post-title"><a href="/2018/10/05/test - 副本 (2)/" title="link to post.title">测试页面</a></h2>
+      <h2 class="post-list__post-title post-title"><a href="/2018/09/01/2018/09/Queue队列/" title="link to post.title">Queue接口的实现类</a></h2>
       <p class="excerpt">
     
-      标题
-一段文字
+      Queue接口的实现类
+queue作为队列，java在实现的时候，直接实现了双端队列deque。这样双端队列就囊括了队列、双端队列、堆栈这3种角色的功能。
+所以我们在使用的时候使用的是Deque接口的实现类，当然Deque接口继承自Queue接口。
 
 
+Deque接口的实现类我们记住，Deque接口所能代表的数据结构：队列，双端队列，堆栈。
+ArrayDeque1.内部使用transient Ob
     &hellip;
       </p>
-      <div class="post-list__meta"><time datetime="2018-10-05T08:21:35.883Z" class="post-list__meta--date date">2018-10-05</time> &#8226; <span class="post-list__meta--tags tags">于 
-  <a class="tag-link" href="/tags/文章/">文章</a>, <a class="tag-link" href="/tags/测试/">测试</a>
-</span><a class="btn-border-small" href="/2018/10/05/test - 副本 (2)/">继续阅读</a></div>
+      <div class="post-list__meta"><time datetime="2018-09-01T00:00:00.000Z" class="post-list__meta--date date">2018-09</time> &#8226; <span class="post-list__meta--tags tags">于 
+  <a class="tag-link" href="/tags/Queue接口/">Queue接口</a>
+</span><a class="btn-border-small" href="/2018/09/01/2018/09/Queue队列/">继续阅读</a></div>
       <hr class="post-list__divider" />
     </li>
   
     
     <li>
-      <h2 class="post-list__post-title post-title"><a href="/2018/10/05/hello-world - 副本/" title="link to post.title">Hello World</a></h2>
+      <h2 class="post-list__post-title post-title"><a href="/2018/08/01/2018/08/日期与时间/" title="link to post.title">日期（Date）与时间(Time)</a></h2>
       <p class="excerpt">
     
-      Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick
+      日期（Date）与时间(Time)在mysql中，与日期、时间相关的数据类型有：DATE、TIME、DATETIME、TIMESTAMP 这4种。
+基本介绍DATE 
+DATE就是日期，日期就是形如YYYY-MM-DD 格式的字符串，它的范围是：1000-01-01-9999-12-31 。官网上讲，允许使用strings和numbers的值。
+在测试中，发现可以有2种形式：
+1234-- 1.s
     &hellip;
       </p>
-      <div class="post-list__meta"><time datetime="2018-10-05T08:21:34.904Z" class="post-list__meta--date date">2018-10-05</time> &#8226; <span class="post-list__meta--tags tags">于 </span><a class="btn-border-small" href="/2018/10/05/hello-world - 副本/">继续阅读</a></div>
+      <div class="post-list__meta"><time datetime="2018-08-01T00:00:00.000Z" class="post-list__meta--date date">2018-08</time> &#8226; <span class="post-list__meta--tags tags">于 
+  <a class="tag-link" href="/tags/date与time/">date与time</a>, <a class="tag-link" href="/tags/mysql/">mysql</a>
+</span><a class="btn-border-small" href="/2018/08/01/2018/08/日期与时间/">继续阅读</a></div>
       <hr class="post-list__divider" />
     </li>
   
@@ -248,7 +276,7 @@ Quick
     
     <span class="pagination__page-number" >  1 / 2 </span>
     
-      <a class="older-posts pagination__older btn btn-small btn-tertiary" href="/archives/page/2/">Next &rarr;</a>
+      <a class="older-posts pagination__older btn btn-small btn-tertiary" href="/archives/page/2/">更早 &rarr;</a>
     
   </nav>
 

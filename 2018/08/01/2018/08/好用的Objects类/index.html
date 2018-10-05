@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="z">
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    
+    <title>好用的`java.util.Objects`类 | ibard</title>
+    <meta name="renderer" content="webkit">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <meta name="description" content="弱水三千只取一瓢">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="好用的`java.util.Objects`类 | ibard">
+    <meta name="twitter:description" content="弱水三千只取一瓢">
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="好用的`java.util.Objects`类 | ibard">
+    <meta property="og:description" content="弱水三千只取一瓢">
+
+    
+    <meta name="author" content="Ming Chow">
+    
+    <link rel="stylesheet" href="/css/vno.css">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css">
+
+    
+    <link rel="icon" href="/images/favicon.png">
+    
+
+    <meta name="generator" content="hexo"/>
+    
+    <link rel="alternate" type="application/rss+xml" title="ibard" href="/atom.xml">
+    
+
+    <link rel="canonical" href="https://blog.ibard.cn/2018/08/01/2018/08/好用的Objects类/"/>
+
+                 
+</head>
+
+<body class="home-template no-js">
+    <script src="//cdn.bootcss.com/jquery/2.1.4/jquery.min.js"></script>
+    <script src="/js/main.js"></script>
+    <span class="mobile btn-mobile-menu">
+        <i class="fa fa-list btn-mobile-menu__icon"></i>
+        <i class="fa fa-angle-up btn-mobile-close__icon hidden"></i>
+    </span>
+
+    
+<header class="panel-cover panel-cover--collapsed" style="background-image: url(/images/background-cover.jpg)">
+  <div class="panel-main">
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        <a href="/" title="前往 ibard 的主页"><img src="/images/avatar.jpg" width="80" alt="ibard logo" class="panel-cover__logo logo" /></a>
+        <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage for ibard">ibard</a></h1>
+        
+        <span class="panel-cover__subtitle panel-subtitle">乐观， 进取</span>
+        
+        <hr class="panel-cover__divider" />
+        <p class="panel-cover__description">弱水三千只取一瓢</p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary" />
+
+        <div class="navigation-wrapper">
+          <div>
+          <nav class="cover-navigation cover-navigation--primary">
+            <ul class="navigation">
+              <li class="navigation__item"><a href="/#blog" title="访问博客" class="blog-button">文字阁</a></li>
+            
+              <li class="navigation__item"><a href="/mood">心情随笔</a></li>
+            
+            </ul>
+          </nav>
+          </div>
+          <div>
+          <nav class="cover-navigation navigation--social">
+  <ul class="navigation">
+
+    <!-- Weibo-->
+    
+
+    <!-- Github -->
+    
+    <li class="navigation__item">
+      <a href="https://github.com/sevenleave" title="查看我的GitHub主页" target="_blank">
+        <i class='social fa fa-github'></i>
+        <span class="label">Github</span>
+      </a>
+    </li>
+    
+
+    <!-- Stack Overflow -->
+    
+
+    <!-- Google Plus -->
+    
+
+    <!-- Facebook -->
+    
+
+    <!-- Segmentfault -->
+    
+      <li class="navigation__item">
+        <a href="https://segmentfault.com/blog/sevenleave" title="上Segmentfault找我" target="_blank">
+          <i class='social fa fa-pagelines'></i>
+          <span class="label">Segmentfault</span>
+        </a>
+      </li>
+      
+
+    <!-- Twitter -->
+    
+
+    
+    <li class="navigation__item">
+      <a href="/atom.xml" title="RSS" target="_blank">
+        <i class='social fa fa-rss'></i>
+        <span class="label">RSS</span>
+      </a>
+    </li>
+    
+    
+
+  </ul>
+</nav>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay cover-orange"></div>
+  </div> 
+</header>
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner">
+            <article class="post-container post-container--single">
+
+  <header class="post-header">
+    <div class="post-meta">
+      <time datetime="2018-08-01T00:00:00.000Z" class="post-list__meta--date date">2018-08</time> &#8226; <span class="post-meta__tags tags">于 
+  <a class="tag-link" href="/tags/java-util-Objects/">java.util.Objects</a>
+ </span>
+      <span class="page-pv">
+       阅读 <span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span>
+      </span> 
+   
+    </div>
+    <h1 class="post-title">好用的`java.util.Objects`类</h1>
+  </header>
+
+  <section class="post">
+    <h1 id="好用的java-util-Objects类"><a href="#好用的java-util-Objects类" class="headerlink" title="好用的java.util.Objects类"></a>好用的<code>java.util.Objects</code>类</h1><p>在jdk1.7中，新增了一个工具类，就是<code>java.util.Objects</code>类。它有3个简单的封装方法，对于平常的使用来说挺有用的，分别是：<code>hashCode</code>、<code>equals</code>、<code>toString</code>这3个方法。</p>
+<h4 id="1、hashcode生成"><a href="#1、hashcode生成" class="headerlink" title="1、hashcode生成"></a>1、hashcode生成</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 1. Objects.hash(Object... values)</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">hash</span><span class="params">(Object... values)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">return</span> Arrays.hashCode(values);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 2. Arrays.hashCode(Object a[])</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">hashCode</span><span class="params">(Object a[])</span> </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (a == <span class="keyword">null</span>)</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">int</span> result = <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">for</span> (Object element : a)</span><br><span class="line">    result = <span class="number">31</span> * result + (element == <span class="keyword">null</span> ? <span class="number">0</span> : element.hashCode());</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 3. Object.hashCode()</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">native</span> <span class="keyword">int</span> <span class="title">hashCode</span><span class="params">()</span></span>;</span><br></pre></td></tr></table></figure>
+<p>首先，Objects的hash方法接收可变参数，可变参数的内部是一个数组。然后内部调用Arrays的hashCode方法，我们来看一下其方法：核心是遍历每一个参数来计算result值，在计算的过程中，每一个参数上转型为Object使用hashCode来生成随机值。那么Object的hashCode又是什么？这是一个本地方法，源码不给出实现，其数值和对象的内存地址有关。</p>
+<blockquote>
+<p>参数虽然上转型为Object，但是对于String、Integer等对象类型，它们都重写了hashCode方法。</p>
+<p>因为是基于内存地址的生成，所以不同对象生成的hashcode值冲突的几率是很小的。</p>
+</blockquote>
+<h4 id="2、对象equals比较"><a href="#2、对象equals比较" class="headerlink" title="2、对象equals比较"></a>2、对象equals比较</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 1. Objects.equals(Object a, Object b)</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">boolean</span> <span class="title">equals</span><span class="params">(Object a, Object b)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">return</span> (a == b) || (a != <span class="keyword">null</span> &amp;&amp; a.equals(b));</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 2. Object.equals(Object obj)</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">equals</span><span class="params">(Object obj)</span> </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> (<span class="keyword">this</span> == obj);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>首先是对象的引用判断，其次就是调用对象自身的equals方法来比较，如果对象类型没有重写equals的话，就会调用Object的equals方法（仍然是对象的引用比较）。</p>
+<blockquote>
+<p>事实上，我们进行equals比较的对象，除了引用对象之外，就是String、Integer（自动装箱后）等类型了。</p>
+<p>对于String，直接进行引用比较。而对于Integer、Double等对象类型，它们都重写了equals方法，贴出Integer的equals方法：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&gt; <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">equals</span><span class="params">(Object obj)</span> </span>&#123;</span><br><span class="line">&gt;   <span class="keyword">if</span> (obj <span class="keyword">instanceof</span> Integer) &#123;</span><br><span class="line">&gt;   	<span class="keyword">return</span> value == ((Integer)obj).intValue();</span><br><span class="line">&gt;   &#125;</span><br><span class="line">&gt; 	<span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">&gt; &#125;</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<blockquote>
+<p>可以看到，内部是进行值相等判断。</p>
+</blockquote>
+<h2 id="hashCode与equals方法的重要性"><a href="#hashCode与equals方法的重要性" class="headerlink" title="hashCode与equals方法的重要性"></a>hashCode与equals方法的重要性</h2><p>对于散列结构（hash）的集合类型，比如说HashMap、HashSet等，如果我们用它们来存储我们自定义的对象，那么我们就必要重写类的hashCode与equals方法。<u>为什么要重写，这个原因就不赘述了。</u> 还有Set集合类，由于它存储不重复的元素。</p>
+<p>下面我们给出利用Objects工具类的一种较为简单实用的重写方式：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Building</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> String name;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">double</span> area;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">hashCode</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> Objects.hash(name, area);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">equals</span><span class="params">(Object obj)</span> </span>&#123;</span><br><span class="line">      	<span class="comment">// 引用相等判断</span></span><br><span class="line">        <span class="keyword">if</span> (obj == <span class="keyword">this</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">      	<span class="comment">// 类型判断</span></span><br><span class="line">        <span class="keyword">if</span> (!(obj <span class="keyword">instanceof</span> Building)) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        Building building = (Building) obj;</span><br><span class="line">      	<span class="comment">// 关键域相等判断</span></span><br><span class="line">        <span class="comment">// 基本类型不要用用Objects.equals()方法，会自动装箱带来额外开销</span></span><br><span class="line">        <span class="keyword">return</span> Objects.equals(name, building.name) &amp;&amp; (area == building.area);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">toString</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> Objects.toString(<span class="string">"name = "</span> + name, <span class="string">"name is undefined"</span>) + <span class="string">", "</span></span><br><span class="line">                + Objects.toString(<span class="string">"area = "</span> + area, <span class="string">"area is undefined"</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">  	<span class="comment">// setter、getter</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="3、toString"><a href="#3、toString" class="headerlink" title="3、toString"></a>3、toString</h4><p>我们自己重写toString方法时，有一点比较难写，就是默认值设置。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Objects.toString(Object o, String nullDefault)</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title">toString</span><span class="params">(Object o, String nullDefault)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">return</span> (o != <span class="keyword">null</span>) ? o.toString() : nullDefault;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Objects.toStirng(Object 0)</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title">toString</span><span class="params">(Object o)</span> </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> String.valueOf(o);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>我们在重写toString时，可以参考上面的<code>Building</code>类的写法。</p>
+
+  </section>
+
+</article>
+
+<section class="read-more">
+           
+    
+               
+            <div class="read-more-item">
+                <span class="read-more-item-dim">最近的文章</span>
+                <h2 class="post-list__post-title post-title"><a href="/2018/08/01/2018/08/日期与时间/" title="日期（Date）与时间(Time)">日期（Date）与时间(Time)</a></h2>
+                <p class="excerpt">
+                
+                日期（Date）与时间(Time)在mysql中，与日期、时间相关的数据类型有：DATE、TIME、DATETIME、TIMESTAMP 这4种。
+基本介绍DATE 
+DATE就是日期，日期就是形如YYYY-MM-DD 格式的字符串，它的范围是：1000-01-01-9999-12-31 。官网上讲
+                &hellip;
+                </p>
+                <div class="post-list__meta"><time datetime="2018-08-01T00:00:00.000Z" class="post-list__meta--date date">2018-08</time> &#8226; <span class="post-list__meta--tags tags">于 
+  <a class="tag-link" href="/tags/date与time/">date与time</a>, <a class="tag-link" href="/tags/mysql/">mysql</a>
+</span><a class="btn-border-small" href="/2018/08/01/2018/08/日期与时间/">继续阅读</a></div>
+                           
+            </div>
+        
+        
+               
+            <div class="read-more-item">
+                <span class="read-more-item-dim">更早的文章</span>
+                <h2 class="post-list__post-title post-title"><a href="/2018/08/01/2018/08/Java中的数值类型选择/" title="Java中的数值类型选择">Java中的数值类型选择</a></h2>
+                <p class="excerpt">
+                
+                Java中的数值类型选择整数类型有byte(1 byte)，short(2 byte)，int(4 byte)，long(8 byte)等基本数据类型，取值的范围不一样。
+1234byte x1 = 1;short x2 = 2;int x3 = 3;long x4 = 4L;
+涉及到有小数的数值这
+                &hellip;
+                </p>
+                <div class="post-list__meta"><time datetime="2018-08-01T00:00:00.000Z" class="post-list__meta--date date">2018-08</time> &#8226; <span class="post-list__meta--tags tags">于 
+  <a class="tag-link" href="/tags/数值类型/">数值类型</a>
+</span><a class="btn-border-small" href="/2018/08/01/2018/08/Java中的数值类型选择/">继续阅读</a></div>
+                       
+            </div>
+        
+     
+   
+   
+  
+</section>
+
+  
+
+            <footer class="footer">
+    <span class="footer__copyright">
+        &copy; 2018 Ming Chow - 本站点采用 <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>
+       
+    </span>
+    <span class="footer__copyright">
+             - 基于 <a href="http://hexo.io">Hexo</a> 搭建，使用 <a href="https://github.com/monniya/hexo-theme-new-vno ">new-vno</a> 主题，由<a href="https://monniya.com ">@Monniya</a> 修改自 <a href="https://github.com/lenbo-ma/hexo-theme-vno" target="_blank">Vno</a>, 原创出自<a href="http://github.com/onevcat/vno" target="_blank">onevcat</a>
+         </span>
+       
+    
+    
+</footer>
+
+
+        </div>
+    </div>
+
+     
+<script>
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	ga('create', 'UA-78918255-1', 'auto');
+	ga('send', 'pageview');
+</script>
+
+    
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "//hm.baidu.com/hm.js?9cdad07c755fa23f6aced510c6760e87";
+            var s = document.getElementsByTagName("script")[0]; 
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+
+
+
+    <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    
+    
+</body>
+</html>

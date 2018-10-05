@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="z">
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    
+    <title>动态代理 | ibard</title>
+    <meta name="renderer" content="webkit">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <meta name="description" content="弱水三千只取一瓢">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="动态代理 | ibard">
+    <meta name="twitter:description" content="弱水三千只取一瓢">
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="动态代理 | ibard">
+    <meta property="og:description" content="弱水三千只取一瓢">
+
+    
+    <meta name="author" content="Ming Chow">
+    
+    <link rel="stylesheet" href="/css/vno.css">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css">
+
+    
+    <link rel="icon" href="/images/favicon.png">
+    
+
+    <meta name="generator" content="hexo"/>
+    
+    <link rel="alternate" type="application/rss+xml" title="ibard" href="/atom.xml">
+    
+
+    <link rel="canonical" href="https://blog.ibard.cn/2018/09/01/2018/09/动态代理/"/>
+
+                 
+</head>
+
+<body class="home-template no-js">
+    <script src="//cdn.bootcss.com/jquery/2.1.4/jquery.min.js"></script>
+    <script src="/js/main.js"></script>
+    <span class="mobile btn-mobile-menu">
+        <i class="fa fa-list btn-mobile-menu__icon"></i>
+        <i class="fa fa-angle-up btn-mobile-close__icon hidden"></i>
+    </span>
+
+    
+<header class="panel-cover panel-cover--collapsed" style="background-image: url(/images/background-cover.jpg)">
+  <div class="panel-main">
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        <a href="/" title="前往 ibard 的主页"><img src="/images/avatar.jpg" width="80" alt="ibard logo" class="panel-cover__logo logo" /></a>
+        <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage for ibard">ibard</a></h1>
+        
+        <span class="panel-cover__subtitle panel-subtitle">乐观， 进取</span>
+        
+        <hr class="panel-cover__divider" />
+        <p class="panel-cover__description">弱水三千只取一瓢</p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary" />
+
+        <div class="navigation-wrapper">
+          <div>
+          <nav class="cover-navigation cover-navigation--primary">
+            <ul class="navigation">
+              <li class="navigation__item"><a href="/#blog" title="访问博客" class="blog-button">文字阁</a></li>
+            
+              <li class="navigation__item"><a href="/mood">心情随笔</a></li>
+            
+            </ul>
+          </nav>
+          </div>
+          <div>
+          <nav class="cover-navigation navigation--social">
+  <ul class="navigation">
+
+    <!-- Weibo-->
+    
+
+    <!-- Github -->
+    
+    <li class="navigation__item">
+      <a href="https://github.com/sevenleave" title="查看我的GitHub主页" target="_blank">
+        <i class='social fa fa-github'></i>
+        <span class="label">Github</span>
+      </a>
+    </li>
+    
+
+    <!-- Stack Overflow -->
+    
+
+    <!-- Google Plus -->
+    
+
+    <!-- Facebook -->
+    
+
+    <!-- Segmentfault -->
+    
+      <li class="navigation__item">
+        <a href="https://segmentfault.com/blog/sevenleave" title="上Segmentfault找我" target="_blank">
+          <i class='social fa fa-pagelines'></i>
+          <span class="label">Segmentfault</span>
+        </a>
+      </li>
+      
+
+    <!-- Twitter -->
+    
+
+    
+    <li class="navigation__item">
+      <a href="/atom.xml" title="RSS" target="_blank">
+        <i class='social fa fa-rss'></i>
+        <span class="label">RSS</span>
+      </a>
+    </li>
+    
+    
+
+  </ul>
+</nav>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay cover-orange"></div>
+  </div> 
+</header>
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner">
+            <article class="post-container post-container--single">
+
+  <header class="post-header">
+    <div class="post-meta">
+      <time datetime="2018-09-01T00:00:00.000Z" class="post-list__meta--date date">2018-09</time> &#8226; <span class="post-meta__tags tags">于  </span>
+      <span class="page-pv">
+       阅读 <span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span>
+      </span> 
+   
+    </div>
+    <h1 class="post-title">动态代理</h1>
+  </header>
+
+  <section class="post">
+    <h1 id="动态代理"><a href="#动态代理" class="headerlink" title="动态代理"></a>动态代理</h1><h2 id="1、先谈静态代理"><a href="#1、先谈静态代理" class="headerlink" title="1、先谈静态代理"></a>1、先谈静态代理</h2><p>对于静态代理，我们已经很熟悉了。我们拥有一个抽象类，真实类继承自抽象类并重写其业务方法，代理类持有真实类的对象实例，在重写业务方法中通过调用真实类的方法，并且添加自己的逻辑。这样代理类就实现了对真实类的行为代理。</p>
+<p><img src="http://pd73wtntw.bkt.clouddn.com/201809/sp-1.png-zoom50" alt="sp-1"></p>
+<p>静态代理的缺点在于，我们需要实现多个代理类，这无疑是很崩溃的。</p>
+<h2 id="2、JDK动态代理"><a href="#2、JDK动态代理" class="headerlink" title="2、JDK动态代理"></a>2、JDK动态代理</h2><blockquote>
+<p>优点先行：我们说静态代理的缺点在于需要为每一个真实类都生成一个对应的代理类，这样就很繁琐。动态代理呢，我们是动态生成目标类的动态代理类，根本不需要为每一个只需要定义一个动态代理类，就可以代理所有、无数的真实类；当然我们需要一个类来实现<code>InvocationHandler</code>接口即可。也就是说我们只需要一个类即可。</p>
+</blockquote>
+<p>java中提供了一个接口<code>InvocationHandler</code>和<code>Proxy</code>类来实现动态代理。</p>
+<p><code>InvocationHandler</code>接口是代理实例用来调用处理程序（代理行为）的接口，它只有一个方法。接收的参数为：动态代理对象，代理对象调用的接口方法的实例，执行参数。</p>
+<p><img src="http://pd73wtntw.bkt.clouddn.com/201809/dp-1.png-zoom75" alt="dp-1"></p>
+<p>就如下面的<code>Market</code>类实现了<code>InvocationHandler</code>接口，内部的<code>Object target</code>用来持有动态代理的真实对象实例，<code>bind</code>方法用来接收外部真实类对象传递给<code>target</code>。然后重点就是重写<code>invoke</code>方法了，这个方法和下面的<code>Proxy</code>类一起讲解。</p>
+<blockquote>
+<p>这个类是用来处理动态代理的逻辑的，它的作用是接收生成的动态代理对象和被代理对象实现的接口与运行时的参数，这样就能拦截对接口方法的调用，从而实现自己的拦截逻辑。</p>
+</blockquote>
+<p><img src="http://pd73wtntw.bkt.clouddn.com/201809/dp-2.png-zoom50" alt="dp-2"></p>
+<p>如下图，我们在测试类中，使用<code>Proxy</code>类的<code>newProxyInstance</code>静态方法来生成动态代理对象。该方法很重要，传入的参数：被代理类的类加载器，被代理类的所实现的接口(用数组保存的)，实现了<code>InvocationHandler</code>的接口的动态代理处理类。</p>
+<blockquote>
+<p>这个类用来生成了动态代理的对象，很神奇的是，我们调用接口的方法时，就发现方法被拦截了，这时候生成的是动态代理对象，所以接口方法的逻辑已经是被拦截的逻辑了。（这里我们看成是一个新的动态代理的对象就好了）</p>
+</blockquote>
+<p><img src="http://pd73wtntw.bkt.clouddn.com/201809/dp-3.png" alt="dp-3"></p>
+<p>为避免混乱，将包、类的结构给出：</p>
+<p><img src="http://pd73wtntw.bkt.clouddn.com/201809/dp-4.png-zoom75" alt="dp-4"></p>
+<p>动态代理类的命名规则：包名+<code>$Proxy</code>+id，同一个接口的实现类的id是相同的。</p>
+<p><img src="http://pd73wtntw.bkt.clouddn.com/201809/dp-5.png-zoom75" alt="dp-5"></p>
+<h4 id="JDK动态代理的总结（不足）"><a href="#JDK动态代理的总结（不足）" class="headerlink" title="JDK动态代理的总结（不足）"></a>JDK动态代理的总结（不足）</h4><p>1.JDK动态代理是通过接口中的方法名，在动态生成的代理类中调用业务实现类的同名方法。因此，对一个类而言，如果想要对它使用JDK动态代理，那么这个类就必须实现接口<code>interface</code>，并且我们拦截的是其接口声明的方法才行。简言之，<strong>JDK动态代理只能对实现了接口的类生成代理，而不能针对未实现接口的类</strong>。</p>
+<p>2.我们发现，在JDK动态代理的实现过程中，我们无法对接口中的各个方法都实现一段独有的逻辑（如果被代理类实现的接口有多个方法，我们的动态代理的拦截逻辑却只有一段，所有的方法被拦截时都是用相同的逻辑来处理）。<strong>这是一个很大的问题。</strong></p>
+<p>3.JDK动态代理生成的动态代理类，是无法调用原业务类自己拥有的方法的（即接口中没有声明的方法）。要明白，动态代理类的存在意义是为了拦截方法并修改逻辑；而JDK动态代理的局限性之一就是只能拦截接口所声明的方法。</p>
+<p>4.<strong>JDK动态代理是利用反射机制生成一个实现代理接口的匿名类，在调用具体方法前调用<code>InvokeHandler</code>来处理。</strong></p>
+<h2 id="3、CGLib动态代理"><a href="#3、CGLib动态代理" class="headerlink" title="3、CGLib动态代理"></a>3、CGLib动态代理</h2><p>和JDK动态代理不同的是，CGLib动态代理解决了JDK动态代理的第一个不足。也就是说，如果一个类没有实现接口，那么我们还可以使用CGLib来生成其动态代理对象。</p>
+<p>这里我们要讲到<code>MethodInterceptor</code>接口了。注意，CGLib动态代理并不是JDK中的类，它是外部的lib包。</p>
+<p><img src="http://pd73wtntw.bkt.clouddn.com/201809/dp-6.png-zoom75" alt="dp-6"></p>
+<p>我们还需要结合动态代理对象的生成来讲解。</p>
+<p><img src="http://pd73wtntw.bkt.clouddn.com/201809/dp-7.png-zoom50" alt="dp-7"></p>
+<p>同样，我们只需要定义一个动态代理的处理类即可。实现了<code>MethodInterceptor</code>接口的类，需要重写<code>intercept</code>方法，用来拦截被代理类的方法调用。然后在该类中定义一个生产动态代理对象的方法，该方法接收被代理类的对象，然后拦截方法，设置调用拦截方法的逻辑，最后返回创建的动态代理对象。</p>
+<h4 id="CGLib动态代理的总结"><a href="#CGLib动态代理的总结" class="headerlink" title="CGLib动态代理的总结"></a>CGLib动态代理的总结</h4><p>1.CGlib动态代理的原理是通过继承业务类，<strong>生成的动态代理类是业务类的子类</strong>，通过重写业务方法进行代理。 因为动态代理类是继承自业务类，所以该类和方法不能声明成final（无法继承或重写）。 </p>
+<p>2.同JDK动态代理一样，CGLib动态代理也无法做到对业务类的每个方法都实现不同的拦截逻辑。</p>
+<h2 id="JDK动态代理和CGLib动态代理的比较"><a href="#JDK动态代理和CGLib动态代理的比较" class="headerlink" title="JDK动态代理和CGLib动态代理的比较"></a>JDK动态代理和CGLib动态代理的比较</h2><p>1.JDK动态代理是面向接口，在创建代理实现类时比CGLib要快，创建动态代理类的速度快。</p>
+<p>2.CGLib动态代理是通过字节码底层继承要代理类来实现（如果被代理类被final关键字所修饰，那么会失败），在创建代理这一块没有JDK动态代理快，但是运行速度比JDK动态代理要快。</p>
+<p>3.2者最终都是生成了一个新的动态代理类对象。</p>
+<h2 id="Spring中的动态代理"><a href="#Spring中的动态代理" class="headerlink" title="Spring中的动态代理"></a>Spring中的动态代理</h2><h3 id="1、Spring在选择用JDK还是CGLiB的依据"><a href="#1、Spring在选择用JDK还是CGLiB的依据" class="headerlink" title="1、Spring在选择用JDK还是CGLiB的依据?"></a>1、Spring在选择用JDK还是CGLiB的依据?</h3><p>（1）当Bean实现接口时，Spring就会用JDK的动态代理。</p>
+<p>（2）当Bean没有实现接口时，Spring使用CGlib实现。</p>
+<p>（3）可以强制使用CGlib（在spring配置中加入<code>&lt;aop:aspectj-autoproxy proxy-target-class=&quot;true&quot;/&gt;</code>）</p>
+<h3 id="2、CGlib比JDK快？"><a href="#2、CGlib比JDK快？" class="headerlink" title="2、CGlib比JDK快？"></a>2、CGlib比JDK快？</h3><p>（1）在对JDK动态代理与CGlib动态代理的代码实验中看，1W次执行下，JDK7及8的动态代理性能比CGlib要好20%左右。</p>
+<p>（2）使用CGLib实现动态代理，CGLib底层采用ASM字节码生成框架，使用字节码技术生成代理类，比使用Java反射效率要高。唯一需要注意的是，CGLib不能对声明为final的方法进行代理，因为CGLib原理是动态生成被代理类的子类。</p>
+
+  </section>
+
+</article>
+
+<section class="read-more">
+           
+    
+               
+            <div class="read-more-item">
+                <span class="read-more-item-dim">最近的文章</span>
+                <h2 class="post-list__post-title post-title"><a href="/2018/09/01/2018/09/序列化/" title="序列化">序列化</a></h2>
+                <p class="excerpt">
+                
+                序列化Serializable作用 
+1.当2个进程在进行远程通信时，相互发送数据，数据都是以二进制的形式传送的。如果我们要传输对象的话，就需要把对象转化为字节数组（二进制数据），接收方接收后反序列成对象。目的在于，传送对象的状态，也就是属性值
+2.反序列化后的对象还可以保存到硬盘上。
+实现方式
+1
+                &hellip;
+                </p>
+                <div class="post-list__meta"><time datetime="2018-09-01T00:00:00.000Z" class="post-list__meta--date date">2018-09</time> &#8226; <span class="post-list__meta--tags tags">于 </span><a class="btn-border-small" href="/2018/09/01/2018/09/序列化/">继续阅读</a></div>
+                           
+            </div>
+        
+        
+               
+            <div class="read-more-item">
+                <span class="read-more-item-dim">更早的文章</span>
+                <h2 class="post-list__post-title post-title"><a href="/2018/09/01/2018/09/二叉树/" title="二叉树">二叉树</a></h2>
+                <p class="excerpt">
+                
+                二叉树前情提要：1、二叉树每一个节点最多有2个子节点，有左右之分。深度为n的二叉树，最多有2^n^ -1个节点，第n层最多有2^k-1^ 个节点。
+2、满二叉树一棵深度为k，且有2^k^ -1个节点的树。
+3、完全二叉树完全二叉树是由满二叉树而引出来的。对于深度为K的，有n个结点的二叉树，当且仅当其
+                &hellip;
+                </p>
+                <div class="post-list__meta"><time datetime="2018-09-01T00:00:00.000Z" class="post-list__meta--date date">2018-09</time> &#8226; <span class="post-list__meta--tags tags">于 
+  <a class="tag-link" href="/tags/二叉树/">二叉树</a>, <a class="tag-link" href="/tags/算法/">算法</a>
+</span><a class="btn-border-small" href="/2018/09/01/2018/09/二叉树/">继续阅读</a></div>
+                       
+            </div>
+        
+     
+   
+   
+  
+</section>
+
+  
+
+            <footer class="footer">
+    <span class="footer__copyright">
+        &copy; 2018 Ming Chow - 本站点采用 <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>
+       
+    </span>
+    <span class="footer__copyright">
+             - 基于 <a href="http://hexo.io">Hexo</a> 搭建，使用 <a href="https://github.com/monniya/hexo-theme-new-vno ">new-vno</a> 主题，由<a href="https://monniya.com ">@Monniya</a> 修改自 <a href="https://github.com/lenbo-ma/hexo-theme-vno" target="_blank">Vno</a>, 原创出自<a href="http://github.com/onevcat/vno" target="_blank">onevcat</a>
+         </span>
+       
+    
+    
+</footer>
+
+
+        </div>
+    </div>
+
+     
+<script>
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	ga('create', 'UA-78918255-1', 'auto');
+	ga('send', 'pageview');
+</script>
+
+    
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "//hm.baidu.com/hm.js?9cdad07c755fa23f6aced510c6760e87";
+            var s = document.getElementsByTagName("script")[0]; 
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+
+
+
+    <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    
+    
+</body>
+</html>
