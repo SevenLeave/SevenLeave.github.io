@@ -156,7 +156,7 @@
   </header>
 
   <section class="post">
-    <h1 id="Java中的数值类型选择"><a href="#Java中的数值类型选择" class="headerlink" title="Java中的数值类型选择"></a>Java中的数值类型选择</h1><h2 id="整数类型"><a href="#整数类型" class="headerlink" title="整数类型"></a>整数类型</h2><p>有byte(1 byte)，short(2 byte)，int(4 byte)，long(8 byte)等基本数据类型，取值的范围不一样。</p>
+    <h2 id="整数类型"><a href="#整数类型" class="headerlink" title="整数类型"></a>整数类型</h2><p>有byte(1 byte)，short(2 byte)，int(4 byte)，long(8 byte)等基本数据类型，取值的范围不一样。</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">byte</span> x1 = <span class="number">1</span>;</span><br><span class="line"><span class="keyword">short</span> x2 = <span class="number">2</span>;</span><br><span class="line"><span class="keyword">int</span> x3 = <span class="number">3</span>;</span><br><span class="line"><span class="keyword">long</span> x4 = <span class="number">4L</span>;</span><br></pre></td></tr></table></figure>
 <h2 id="涉及到有小数的数值"><a href="#涉及到有小数的数值" class="headerlink" title="涉及到有小数的数值"></a>涉及到有小数的数值</h2><p>这种场景也是要分情况讨论的。</p>
 <h4 id="1-货币、金钱的计算"><a href="#1-货币、金钱的计算" class="headerlink" title="1.货币、金钱的计算"></a>1.货币、金钱的计算</h4><p>当涉及到人民币、美元的计算时，比如说人民币RMB，单位有元、角、分，我们可以参考腾讯微信的做法，把金钱都乘以100，转化为以分为整数的计算：</p>
@@ -187,16 +187,17 @@
                
             <div class="read-more-item">
                 <span class="read-more-item-dim">最近的文章</span>
-                <h2 class="post-list__post-title post-title"><a href="/2018/08/01/2018/08/好用的Objects类/" title="好用的`java.util.Objects`类">好用的`java.util.Objects`类</a></h2>
+                <h2 class="post-list__post-title post-title"><a href="/2018/08/01/2018/08/日期与时间/" title="日期（Date）与时间(Time)">日期（Date）与时间(Time)</a></h2>
                 <p class="excerpt">
                 
-                好用的java.util.Objects类在jdk1.7中，新增了一个工具类，就是java.util.Objects类。它有3个简单的封装方法，对于平常的使用来说挺有用的，分别是：hashCode、equals、toString这3个方法。
-1、hashcode生成12345678910111213
+                在mysql中，与日期、时间相关的数据类型有：DATE、TIME、DATETIME、TIMESTAMP 这4种。
+基本介绍DATE 
+DATE就是日期，日期就是形如YYYY-MM-DD 格式的字符串，它的范围是：1000-01-01-9999-12-31 。官网上讲，允许使用strings和numb
                 &hellip;
                 </p>
                 <div class="post-list__meta"><time datetime="2018-08-01T00:00:00.000Z" class="post-list__meta--date date">2018-08</time> &#8226; <span class="post-list__meta--tags tags">于 
-  <a class="tag-link" href="/tags/java-util-Objects/">java.util.Objects</a>
-</span><a class="btn-border-small" href="/2018/08/01/2018/08/好用的Objects类/">继续阅读</a></div>
+  <a class="tag-link" href="/tags/date与time/">date与time</a>, <a class="tag-link" href="/tags/mysql/">mysql</a>
+</span><a class="btn-border-small" href="/2018/08/01/2018/08/日期与时间/">继续阅读</a></div>
                            
             </div>
         
@@ -207,11 +208,12 @@
                 <h2 class="post-list__post-title post-title"><a href="/2018/07/01/2018/07/http请求的url编码/" title="http请求（GET/POST）时，url/参数编码的过程分析">http请求（GET/POST）时，url/参数编码的过程分析</a></h2>
                 <p class="excerpt">
                 
-                http请求（GET/POST）时，url/参数编码的过程分析
+                
 这个实验，是在采用ssm框架的基础上演示的。
 
 在前端向后端发出http请求时，有时候当我们采用GET方式时，参数会被编码在url后面。那么这个url是如何编码解码的呢？
-http请求的发出，以及编码过程下面在chrome浏览器和pos
+http请求的发出，以及编码过程下面在chrome浏览器和postman下模拟请求，用fiddler来监控请求发出信息。
+ch
                 &hellip;
                 </p>
                 <div class="post-list__meta"><time datetime="2018-07-01T00:00:00.000Z" class="post-list__meta--date date">2018-07</time> &#8226; <span class="post-list__meta--tags tags">于 

@@ -154,7 +154,7 @@
   </header>
 
   <section class="post">
-    <h1 id="动态代理"><a href="#动态代理" class="headerlink" title="动态代理"></a>动态代理</h1><h2 id="1、先谈静态代理"><a href="#1、先谈静态代理" class="headerlink" title="1、先谈静态代理"></a>1、先谈静态代理</h2><p>对于静态代理，我们已经很熟悉了。我们拥有一个抽象类，真实类继承自抽象类并重写其业务方法，代理类持有真实类的对象实例，在重写业务方法中通过调用真实类的方法，并且添加自己的逻辑。这样代理类就实现了对真实类的行为代理。</p>
+    <h2 id="1、先谈静态代理"><a href="#1、先谈静态代理" class="headerlink" title="1、先谈静态代理"></a>1、先谈静态代理</h2><p>对于静态代理，我们已经很熟悉了。我们拥有一个抽象类，真实类继承自抽象类并重写其业务方法，代理类持有真实类的对象实例，在重写业务方法中通过调用真实类的方法，并且添加自己的逻辑。这样代理类就实现了对真实类的行为代理。</p>
 <p><img src="http://pd73wtntw.bkt.clouddn.com/201809/sp-1.png-zoom50" alt="sp-1"></p>
 <p>静态代理的缺点在于，我们需要实现多个代理类，这无疑是很崩溃的。</p>
 <h2 id="2、JDK动态代理"><a href="#2、JDK动态代理" class="headerlink" title="2、JDK动态代理"></a>2、JDK动态代理</h2><blockquote>
@@ -211,11 +211,11 @@
                 <h2 class="post-list__post-title post-title"><a href="/2018/09/01/2018/09/序列化/" title="序列化">序列化</a></h2>
                 <p class="excerpt">
                 
-                序列化Serializable作用 
+                作用 
 1.当2个进程在进行远程通信时，相互发送数据，数据都是以二进制的形式传送的。如果我们要传输对象的话，就需要把对象转化为字节数组（二进制数据），接收方接收后反序列成对象。目的在于，传送对象的状态，也就是属性值
 2.反序列化后的对象还可以保存到硬盘上。
 实现方式
-1
+1.实现Serializable
                 &hellip;
                 </p>
                 <div class="post-list__meta"><time datetime="2018-09-01T00:00:00.000Z" class="post-list__meta--date date">2018-09</time> &#8226; <span class="post-list__meta--tags tags">于 </span><a class="btn-border-small" href="/2018/09/01/2018/09/序列化/">继续阅读</a></div>
@@ -226,17 +226,18 @@
                
             <div class="read-more-item">
                 <span class="read-more-item-dim">更早的文章</span>
-                <h2 class="post-list__post-title post-title"><a href="/2018/09/01/2018/09/二叉树/" title="二叉树">二叉树</a></h2>
+                <h2 class="post-list__post-title post-title"><a href="/2018/09/01/2018/09/List有序集合/" title="List接口的实现类">List接口的实现类</a></h2>
                 <p class="excerpt">
                 
-                二叉树前情提要：1、二叉树每一个节点最多有2个子节点，有左右之分。深度为n的二叉树，最多有2^n^ -1个节点，第n层最多有2^k-1^ 个节点。
-2、满二叉树一棵深度为k，且有2^k^ -1个节点的树。
-3、完全二叉树完全二叉树是由满二叉树而引出来的。对于深度为K的，有n个结点的二叉树，当且仅当其
+                List表示有序的集合（元素可以重复），根据索引来寻找元素，放入其中的元素的存储顺序和放入顺序是一致的。
+ArrayList
+0.继承自AbstractList，拥有通用的方法如Iterator迭代器。实现List接口。
+1.底层是transient Object[] elementData 数组。
                 &hellip;
                 </p>
                 <div class="post-list__meta"><time datetime="2018-09-01T00:00:00.000Z" class="post-list__meta--date date">2018-09</time> &#8226; <span class="post-list__meta--tags tags">于 
-  <a class="tag-link" href="/tags/二叉树/">二叉树</a>, <a class="tag-link" href="/tags/算法/">算法</a>
-</span><a class="btn-border-small" href="/2018/09/01/2018/09/二叉树/">继续阅读</a></div>
+  <a class="tag-link" href="/tags/List接口/">List接口</a>
+</span><a class="btn-border-small" href="/2018/09/01/2018/09/List有序集合/">继续阅读</a></div>
                        
             </div>
         

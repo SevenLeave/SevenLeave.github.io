@@ -156,7 +156,7 @@
   </header>
 
   <section class="post">
-    <h1 id="java项目中的classpath到底是什么"><a href="#java项目中的classpath到底是什么" class="headerlink" title="java项目中的classpath到底是什么"></a>java项目中的classpath到底是什么</h1><p>在java项目中，你一定碰到过classpath，通常情况下，我们是用它来指定配置/资源文件的路径。在刚开始学习的时候，自己也糊里糊涂，但是现在，是时候弄清楚它到底是指什么了。</p>
+    <p>在java项目中，你一定碰到过classpath，通常情况下，我们是用它来指定配置/资源文件的路径。在刚开始学习的时候，自己也糊里糊涂，但是现在，是时候弄清楚它到底是指什么了。</p>
 <p><strong>顾名思义</strong>，classpath就是class的path，也就是类文件(*.class的路径)。一谈到文件的路径，我们就很有必要了解一个java项目（通常也是web项目）它在真正运行时候，这个项目内部的目录、文件的结构；这样，我们才好分析、理解classpath。</p>
 <h2 id="开发时期的web项目结构"><a href="#开发时期的web项目结构" class="headerlink" title="开发时期的web项目结构"></a>开发时期的web项目结构</h2><p>下面，我以一个ssm的项目为例，我先把开发时候的项目的目录结构图放出来。根据maven的约定，一般我们的项目结构就像下面这样。</p>
 <p><img src="http://pd73wtntw.bkt.clouddn.com/201807/p1.png-fixedw600" alt="maven项目结构"></p>
@@ -186,11 +186,12 @@
                 <h2 class="post-list__post-title post-title"><a href="/2018/07/01/2018/07/http请求的url编码/" title="http请求（GET/POST）时，url/参数编码的过程分析">http请求（GET/POST）时，url/参数编码的过程分析</a></h2>
                 <p class="excerpt">
                 
-                http请求（GET/POST）时，url/参数编码的过程分析
+                
 这个实验，是在采用ssm框架的基础上演示的。
 
 在前端向后端发出http请求时，有时候当我们采用GET方式时，参数会被编码在url后面。那么这个url是如何编码解码的呢？
-http请求的发出，以及编码过程下面在chrome浏览器和pos
+http请求的发出，以及编码过程下面在chrome浏览器和postman下模拟请求，用fiddler来监控请求发出信息。
+ch
                 &hellip;
                 </p>
                 <div class="post-list__meta"><time datetime="2018-07-01T00:00:00.000Z" class="post-list__meta--date date">2018-07</time> &#8226; <span class="post-list__meta--tags tags">于 

@@ -156,7 +156,7 @@
   </header>
 
   <section class="post">
-    <h1 id="好用的java-util-Objects类"><a href="#好用的java-util-Objects类" class="headerlink" title="好用的java.util.Objects类"></a>好用的<code>java.util.Objects</code>类</h1><p>在jdk1.7中，新增了一个工具类，就是<code>java.util.Objects</code>类。它有3个简单的封装方法，对于平常的使用来说挺有用的，分别是：<code>hashCode</code>、<code>equals</code>、<code>toString</code>这3个方法。</p>
+    <p>在jdk1.7中，新增了一个工具类，就是<code>java.util.Objects</code>类。它有3个简单的封装方法，对于平常的使用来说挺有用的，分别是：<code>hashCode</code>、<code>equals</code>、<code>toString</code>这3个方法。</p>
 <h4 id="1、hashcode生成"><a href="#1、hashcode生成" class="headerlink" title="1、hashcode生成"></a>1、hashcode生成</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 1. Objects.hash(Object... values)</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">hash</span><span class="params">(Object... values)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">return</span> Arrays.hashCode(values);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 2. Arrays.hashCode(Object a[])</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">hashCode</span><span class="params">(Object a[])</span> </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (a == <span class="keyword">null</span>)</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">int</span> result = <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">for</span> (Object element : a)</span><br><span class="line">    result = <span class="number">31</span> * result + (element == <span class="keyword">null</span> ? <span class="number">0</span> : element.hashCode());</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 3. Object.hashCode()</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">native</span> <span class="keyword">int</span> <span class="title">hashCode</span><span class="params">()</span></span>;</span><br></pre></td></tr></table></figure>
 <p>首先，Objects的hash方法接收可变参数，可变参数的内部是一个数组。然后内部调用Arrays的hashCode方法，我们来看一下其方法：核心是遍历每一个参数来计算result值，在计算的过程中，每一个参数上转型为Object使用hashCode来生成随机值。那么Object的hashCode又是什么？这是一个本地方法，源码不给出实现，其数值和对象的内存地址有关。</p>
 <blockquote>
@@ -190,17 +190,16 @@
                
             <div class="read-more-item">
                 <span class="read-more-item-dim">最近的文章</span>
-                <h2 class="post-list__post-title post-title"><a href="/2018/08/01/2018/08/日期与时间/" title="日期（Date）与时间(Time)">日期（Date）与时间(Time)</a></h2>
+                <h2 class="post-list__post-title post-title"><a href="/2018/09/01/2018/09/tomcat与nginx反向代理/" title="tomcat与nginx反向代理">tomcat与nginx反向代理</a></h2>
                 <p class="excerpt">
                 
-                日期（Date）与时间(Time)在mysql中，与日期、时间相关的数据类型有：DATE、TIME、DATETIME、TIMESTAMP 这4种。
-基本介绍DATE 
-DATE就是日期，日期就是形如YYYY-MM-DD 格式的字符串，它的范围是：1000-01-01-9999-12-31 。官网上讲
+                一、在linux上部署运行多个tomcat1、以前的我们虽然说是在linux上，但是windows上也是同样的道理，只不过我们服务器都是选用linux罢了。
+原先，自己有多个项目需要部署在linux上时，我的做法（新手的做法）是：在linux上只有一个tomcat服务器，我们把多个项目如projec
                 &hellip;
                 </p>
-                <div class="post-list__meta"><time datetime="2018-08-01T00:00:00.000Z" class="post-list__meta--date date">2018-08</time> &#8226; <span class="post-list__meta--tags tags">于 
-  <a class="tag-link" href="/tags/date与time/">date与time</a>, <a class="tag-link" href="/tags/mysql/">mysql</a>
-</span><a class="btn-border-small" href="/2018/08/01/2018/08/日期与时间/">继续阅读</a></div>
+                <div class="post-list__meta"><time datetime="2018-09-01T00:00:00.000Z" class="post-list__meta--date date">2018-09</time> &#8226; <span class="post-list__meta--tags tags">于 
+  <a class="tag-link" href="/tags/nginx/">nginx</a>, <a class="tag-link" href="/tags/tomcat/">tomcat</a>
+</span><a class="btn-border-small" href="/2018/09/01/2018/09/tomcat与nginx反向代理/">继续阅读</a></div>
                            
             </div>
         
@@ -208,17 +207,17 @@ DATE就是日期，日期就是形如YYYY-MM-DD 格式的字符串，它的范�
                
             <div class="read-more-item">
                 <span class="read-more-item-dim">更早的文章</span>
-                <h2 class="post-list__post-title post-title"><a href="/2018/08/01/2018/08/Java中的数值类型选择/" title="Java中的数值类型选择">Java中的数值类型选择</a></h2>
+                <h2 class="post-list__post-title post-title"><a href="/2018/08/01/2018/08/日期与时间/" title="日期（Date）与时间(Time)">日期（Date）与时间(Time)</a></h2>
                 <p class="excerpt">
                 
-                Java中的数值类型选择整数类型有byte(1 byte)，short(2 byte)，int(4 byte)，long(8 byte)等基本数据类型，取值的范围不一样。
-1234byte x1 = 1;short x2 = 2;int x3 = 3;long x4 = 4L;
-涉及到有小数的数值这
+                在mysql中，与日期、时间相关的数据类型有：DATE、TIME、DATETIME、TIMESTAMP 这4种。
+基本介绍DATE 
+DATE就是日期，日期就是形如YYYY-MM-DD 格式的字符串，它的范围是：1000-01-01-9999-12-31 。官网上讲，允许使用strings和numb
                 &hellip;
                 </p>
                 <div class="post-list__meta"><time datetime="2018-08-01T00:00:00.000Z" class="post-list__meta--date date">2018-08</time> &#8226; <span class="post-list__meta--tags tags">于 
-  <a class="tag-link" href="/tags/数值类型/">数值类型</a>
-</span><a class="btn-border-small" href="/2018/08/01/2018/08/Java中的数值类型选择/">继续阅读</a></div>
+  <a class="tag-link" href="/tags/date与time/">date与time</a>, <a class="tag-link" href="/tags/mysql/">mysql</a>
+</span><a class="btn-border-small" href="/2018/08/01/2018/08/日期与时间/">继续阅读</a></div>
                        
             </div>
         
