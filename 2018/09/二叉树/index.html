@@ -214,16 +214,17 @@
                
             <div class="read-more-item">
                 <span class="read-more-item-dim">最近的文章</span>
-                <h2 class="post-list__post-title post-title"><a href="/2018/09/动态代理/" title="动态代理">动态代理</a></h2>
+                <h2 class="post-list__post-title post-title"><a href="/2018/09/序列化/" title="序列化">序列化</a></h2>
                 <p class="excerpt">
                 
-                1、先谈静态代理对于静态代理，我们已经很熟悉了。我们拥有一个抽象类，真实类继承自抽象类并重写其业务方法，代理类持有真实类的对象实例，在重写业务方法中通过调用真实类的方法，并且添加自己的逻辑。这样代理类就实现了对真实类的行为代理。
-
-静态代理的缺点在于，我们需要实现多个代理类，这无疑是很崩溃的。
-2、
+                作用 
+1.当2个进程在进行远程通信时，相互发送数据，数据都是以二进制的形式传送的。如果我们要传输对象的话，就需要把对象转化为字节数组（二进制数据），接收方接收后反序列成对象。目的在于，传送对象的状态，也就是属性值
+2.反序列化后的对象还可以保存到硬盘上。
+实现方式
+1.实现Serializable
                 &hellip;
                 </p>
-                <div class="post-list__meta"><time datetime="2018-09-01T00:00:00.000Z" class="post-list__meta--date date">2018-09</time> &#8226; <span class="post-list__meta--tags tags">于 </span><a class="btn-border-small" href="/2018/09/动态代理/">继续阅读</a></div>
+                <div class="post-list__meta"><time datetime="2018-09-01T00:00:00.000Z" class="post-list__meta--date date">2018-09</time> &#8226; <span class="post-list__meta--tags tags">于 </span><a class="btn-border-small" href="/2018/09/序列化/">继续阅读</a></div>
                            
             </div>
         
@@ -231,16 +232,20 @@
                
             <div class="read-more-item">
                 <span class="read-more-item-dim">更早的文章</span>
-                <h2 class="post-list__post-title post-title"><a href="/2018/09/tomcat与nginx反向代理/" title="tomcat与nginx反向代理">tomcat与nginx反向代理</a></h2>
+                <h2 class="post-list__post-title post-title"><a href="/2018/09/Queue队列/" title="Queue接口的实现类">Queue接口的实现类</a></h2>
                 <p class="excerpt">
                 
-                一、在linux上部署运行多个tomcat1、以前的我们虽然说是在linux上，但是windows上也是同样的道理，只不过我们服务器都是选用linux罢了。
-原先，自己有多个项目需要部署在linux上时，我的做法（新手的做法）是：在linux上只有一个tomcat服务器，我们把多个项目如projec
+                
+queue作为队列，java在实现的时候，直接实现了双端队列deque。这样双端队列就囊括了队列、双端队列、堆栈这3种角色的功能。
+所以我们在使用的时候使用的是Deque接口的实现类，当然Deque接口继承自Queue接口。
+
+
+Deque接口的实现类我们记住，Deque接口所能代表的数据结构：队
                 &hellip;
                 </p>
                 <div class="post-list__meta"><time datetime="2018-09-01T00:00:00.000Z" class="post-list__meta--date date">2018-09</time> &#8226; <span class="post-list__meta--tags tags">于 
-  <a class="tag-link" href="/tags/nginx/">nginx</a>, <a class="tag-link" href="/tags/tomcat/">tomcat</a>
-</span><a class="btn-border-small" href="/2018/09/tomcat与nginx反向代理/">继续阅读</a></div>
+  <a class="tag-link" href="/tags/Queue接口/">Queue接口</a>
+</span><a class="btn-border-small" href="/2018/09/Queue队列/">继续阅读</a></div>
                        
             </div>
         
